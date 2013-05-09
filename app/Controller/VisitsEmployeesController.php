@@ -47,8 +47,8 @@ class VisitsEmployeesController extends AppController {
 				$this->Session->setFlash(__('The visits employee could not be saved. Please, try again.'));
 			}
 		}
-		$employees = $this->VisitsEmployee->Employee->find('list');
-		$visits = $this->VisitsEmployee->Visit->find('list');
+		$employees = $this->VisitsEmployee->Employees->find('list');
+		$visits = $this->VisitsEmployee->Visits->find('list');
 		$this->set(compact('employees', 'visits'));
 	}
 
@@ -74,8 +74,8 @@ class VisitsEmployeesController extends AppController {
 			$options = array('conditions' => array('VisitsEmployee.' . $this->VisitsEmployee->primaryKey => $id));
 			$this->request->data = $this->VisitsEmployee->find('first', $options);
 		}
-		$employees = $this->VisitsEmployee->Employee->find('list');
-		$visits = $this->VisitsEmployee->Visit->find('list');
+		$employees = $this->VisitsEmployee->Employees->find('list');
+		$visits = $this->VisitsEmployee->Visits->find('list');
 		$this->set(compact('employees', 'visits'));
 	}
 

@@ -3,7 +3,7 @@
 	<fieldset>
 		<legend><?php echo __('Add Activities Visit'); ?></legend>
 	<?php
-		echo $this->Form->input('Visits_id');
+		echo $this->Form->input('Visits_id',array('default'=>$this->request->params['pass']));
 		echo $this->Form->input('Activities_id');
 		echo $this->Form->input('completed');
 		echo $this->Form->input('quantity');

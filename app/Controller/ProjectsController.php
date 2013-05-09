@@ -73,7 +73,7 @@ class ProjectsController extends AppController {
 			$options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
 			$this->request->data = $this->Project->find('first', $options);
 		}
-		$clients = $this->Project->Client->find('list');
+		$clients = $this->Project->Clients->find('list');
 		$this->set(compact('clients'));
 	}
 

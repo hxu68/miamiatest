@@ -5,7 +5,7 @@ App::uses('AppController', 'Controller');
  *
  * @property ActivitiesVisit $ActivitiesVisit
  */
-class ActivitiesVisitsController extends AppController {
+class ActivitiesVisitController extends AppController {
 
 /**
  * index method
@@ -47,8 +47,8 @@ class ActivitiesVisitsController extends AppController {
 				$this->Session->setFlash(__('The activities visit could not be saved. Please, try again.'));
 			}
 		}
-		$visits = $this->ActivitiesVisit->Visit->find('list');
-		$activities = $this->ActivitiesVisit->Activity->find('list');
+		$visits = $this->ActivitiesVisit->Visits->find('list');
+		$activities = $this->ActivitiesVisit->Activities->find('list');
 		$this->set(compact('visits', 'activities'));
 	}
 

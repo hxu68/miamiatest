@@ -47,6 +47,8 @@ class VisitsController extends AppController {
 				$this->Session->setFlash(__('The visit could not be saved. Please, try again.'));
 			}
 		}
+        $employees = $this->Employees->find();
+        $this->set(compact('employees'));
 		$projects = $this->Visit->Projects->find('list');
 		$this->set(compact('projects'));
 	}

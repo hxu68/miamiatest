@@ -26,13 +26,22 @@
 			<?php echo h($visit['Visit']['visitdescription']); ?>
 			&nbsp;
 		</dd>
+        <dt><?php echo __('Employees'); ?></dt>
+        <dd>
+            <?php foreach ($employees as $employee):
+                if($employee['Employee']['id']== 1)
+                    echo h($employee['Employee']['givenname']);
+            endforeach; ?>
+            &nbsp;
+        </dd>
 	</dl>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
+        <li><?php echo $this->Html->link(__('Add Activity'), array('controller'=>'ActivitiesVisit','action' => 'add', $visit['Visit']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('Edit Visit'), array('action' => 'edit', $visit['Visit']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Visit'), array('action' => 'delete', $visit['Visit']['id']), null, __('Are you sure you want to delete # %s?', $visit['Visit']['id'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Delete Visit'), array('action' => 'delete', $visit['Visit']['id']), null, __('Are you sure you want to delete # %s?', $visit['Visit']['visitdate'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Visits'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Visit'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Projects'), array('controller' => 'projects', 'action' => 'index')); ?> </li>
