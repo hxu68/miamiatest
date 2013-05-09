@@ -29,7 +29,7 @@ class VisitsController extends AppController {
 			throw new NotFoundException(__('Invalid visit'));
 		}
 		$options = array('conditions' => array('Visit.' . $this->Visit->primaryKey => $id));
-		$this->set('visit', $this->Visits->find('first', $options));
+		$this->set('visit', $this->Visit->find('first', $options));
 	}
 
 /**
