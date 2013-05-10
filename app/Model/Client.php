@@ -21,7 +21,19 @@ class Client extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
+
+            'onlyletter' => array(
+                'rule' => array('custom', '/^[a-z0-9 ]*$/i') ),
+            'message' => 'Please enter alphabet letters only',
+
+
+
+            'between' => array(
+                'rule'    => array('between', 2, 4),
+                'message' => 'Please enter a title short form.'
+            ),
+
+        ),
 		'givenname' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
@@ -31,7 +43,11 @@ class Client extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
+            'onlyletter' => array(
+                'rule' => array('custom', '/^[a-z0-9 ]*$/i') ),
+            'message' => 'Please enter alphabet letters only',
+
+        ),
 		'streetnumber' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -51,7 +67,11 @@ class Client extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
+            'onlyletter' => array(
+                'rule' => array('custom', '/^[a-z0-9 ]*$/i') ),
+            'message' => 'Please enter alphabet letters only',
+
+        ),
 		'suburb' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
@@ -61,7 +81,11 @@ class Client extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
+            'onlyletter' => array(
+                'rule' => array('custom', '/^[a-z0-9 ]*$/i') ),
+            'message' => 'Please enter alphabet letters only',
+
+        ),
 		'postcode' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -81,7 +105,11 @@ class Client extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
+            'onlyletter' => array(
+                'rule' => array('custom', '/^[a-z0-9 ]*$/i') ),
+            'message' => 'Please enter alphabet letters only',
+
+        ),
 		'mobilephone' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
